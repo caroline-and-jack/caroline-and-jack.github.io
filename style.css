@@ -84,7 +84,7 @@ footer a:hover {
 }
 
 .header-image {
-    width: 100%;        /* Makes the image stretch across the full width */
+    width: 50%;        /* Makes the image stretch across the full width */
     height: auto;       /* Keeps the aspect ratio intact */
     display: block;     /* Removes any unwanted space below the image */
 }
