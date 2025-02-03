@@ -82,10 +82,3 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
-.header-image {
-    width: 50%;        /* Makes the image stretch across the full width */
-    height: auto;       /* Keeps the aspect ratio intact */
-    display: block;     /* Removes any unwanted space below the image */
-}
-
