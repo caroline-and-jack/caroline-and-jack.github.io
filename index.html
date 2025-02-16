@@ -6,13 +6,13 @@
     <title>The Wedding of Caroline & Jack</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CSS for the carousel */
+        /* CSS for the slideshow */
         .carousel {
             position: relative;
             width: 100%;
             max-width: 600px;
             margin: auto;
-            overflow: hidden; /* Hide images that are not in view */
+            overflow: hidden;
         }
 
         .carousel-images {
@@ -21,29 +21,14 @@
         }
 
         .carousel img {
-            object-fit: cover; /* Ensure images cover the area without distortion */
-            padding: 0; /* No initial padding */
+            height: 500px;
+            object-fit: cover; /* Ensure images maintain aspect ratio and cover the space */
+            width: auto;
         }
 
-        /* Add navigation buttons */
+        /* Optional: Remove navigation buttons */
         .carousel-prev, .carousel-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            z-index: 100;
-        }
-
-        .carousel-prev {
-            left: 10px;
-        }
-
-        .carousel-next {
-            right: 10px;
+            display: none;
         }
     </style>
 </head>
@@ -94,8 +79,6 @@
                 <img src="assets/cj7.png" alt="Couple Picture 7">
                 <img src="assets/cj8.png" alt="Couple Picture 8">
             </div>
-            <button class="carousel-prev">❮</button>
-            <button class="carousel-next">❯</button>
         </div>
     </section>
 
@@ -110,52 +93,10 @@
     </footer>
 
     <script>
-        // JavaScript for the automatic carousel functionality
+        // JavaScript for the automatic slideshow functionality
         const images = document.querySelectorAll('.carousel img');
         const totalImages = images.length;
         let currentIndex = 0;
-
-        // Find the largest image by width and height
-        function findLargestImage() {
-            let maxWidth = 0;
-            let maxHeight = 0;
-            images.forEach(img => {
-                const imgWidth = img.naturalWidth;
-                const imgHeight = img.naturalHeight;
-                maxWidth = Math.max(maxWidth, imgWidth);
-                maxHeight = Math.max(maxHeight, imgHeight);
-            });
-            return { width: maxWidth, height: maxHeight };
-        }
-
-        function adjustImagesSize() {
-            const targetHeight = 600; // Desired height
-            const { width, height } = findLargestImage();
-            const scaleFactor = targetHeight / height; // Calculate the scale factor to fit the height
-
-            // Apply scaling to each image
-            images.forEach(img => {
-                const imgWidth = img.naturalWidth;
-                const imgHeight = img.naturalHeight;
-
-                // Scale the width according to the height
-                const scaledWidth = imgWidth * scaleFactor;
-                const scaledHeight = imgHeight * scaleFactor;
-
-                // Apply the scaled dimensions
-                img.style.width = `${scaledWidth}px`;
-                img.style.height = `${scaledHeight}px`;
-
-                // Calculate padding to center the image
-                const paddingX = (scaledWidth - imgWidth * scaleFactor) / 2;
-                const paddingY = (scaledHeight - imgHeight * scaleFactor) / 2;
-
-                img.style.padding = `${paddingY}px ${paddingX}px`;
-            });
-        }
-
-        // Adjust the images when the page loads
-        window.onload = adjustImagesSize;
 
         function showImage(index) {
             const offset = -index * 100; // Shift to show the right image
@@ -167,17 +108,8 @@
             showImage(currentIndex);
         }
 
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-            showImage(currentIndex);
-        }
-
-        // Set interval to change image every 2 seconds
+        // Set interval to change image every 2 seconds (2000ms)
         setInterval(nextImage, 2000);
-
-        // Navigation buttons for manual control
-        document.querySelector('.carousel-next').addEventListener('click', nextImage);
-        document.querySelector('.carousel-prev').addEventListener('click', prevImage);
     </script>
 </body>
 </html>
