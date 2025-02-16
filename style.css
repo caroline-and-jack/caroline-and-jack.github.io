@@ -19,7 +19,7 @@ body {
 header {
     background-color: var(--primary-color);
     text-align: center;
-    padding: 50px;
+    padding: 0px;
 }
 
 header img {
@@ -60,7 +60,7 @@ section {
 /* Footer */
 footer {
     text-align: center;
-    padding: 50px;
+    padding: 0px;
     background-color: var(--primary-color);
 }
 
