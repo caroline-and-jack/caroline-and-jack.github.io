@@ -21,9 +21,8 @@
         }
 
         .carousel img {
-            width: 100%;  /* Each image will take 100% of the carousel width */
-            height: 500px; /* Fixed height of 500px */
             object-fit: cover; /* Ensure images cover the area without distortion */
+            padding: 0; /* No initial padding */
         }
 
         /* Add navigation buttons */
@@ -130,18 +129,28 @@
         }
 
         function adjustImagesSize() {
+            const targetHeight = 600; // Desired height
             const { width, height } = findLargestImage();
+            const scaleFactor = targetHeight / height; // Calculate the scale factor to fit the height
+
+            // Apply scaling to each image
             images.forEach(img => {
                 const imgWidth = img.naturalWidth;
                 const imgHeight = img.naturalHeight;
 
-                // Calculate padding to make every image the same size
-                const paddingX = (width - imgWidth) / 2; // Horizontal padding
-                const paddingY = (height - imgHeight) / 2; // Vertical padding
+                // Scale the width according to the height
+                const scaledWidth = imgWidth * scaleFactor;
+                const scaledHeight = imgHeight * scaleFactor;
+
+                // Apply the scaled dimensions
+                img.style.width = `${scaledWidth}px`;
+                img.style.height = `${scaledHeight}px`;
+
+                // Calculate padding to center the image
+                const paddingX = (scaledWidth - imgWidth * scaleFactor) / 2;
+                const paddingY = (scaledHeight - imgHeight * scaleFactor) / 2;
 
                 img.style.padding = `${paddingY}px ${paddingX}px`;
-                img.style.width = `${width}px`;
-                img.style.height = `${height}px`;
             });
         }
 
