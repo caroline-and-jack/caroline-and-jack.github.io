@@ -70,6 +70,11 @@ footer a {
     text-decoration: none;
 }
 
+footer img {
+    width: 100%;
+    
+}
+
 footer a:hover {
     text-decoration: underline;
 }
