@@ -7,75 +7,66 @@ body {
     color: #000000; /* Black text color */
 }
 
+/* Color palette */
+:root {
+    --primary-color: #6fa3ef;  /* Light Blue */
+    --secondary-color: #f77f00;  /* Orange */
+    --accent-color: #56cfe1;   /* Light Cyan */
+    --highlight-color: #ff6347; /* Tomato */
+}
+
+/* Header and navigation */
 header {
-    background-color: #ffebcd;
+    background-color: var(--primary-color);
     text-align: center;
     padding: 50px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    color: #000000; /* Black text color */
+header img {
+    width: 100%;
+    max-width: 400px;
 }
 
-header p {
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
     font-size: 1.2rem;
-    color: #000000; /* Black text color */
 }
 
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Sections */
 section {
     padding: 20px;
     margin: 20px auto;
     max-width: 900px;
-}
-
-h2 {
-    color: #000000; /* Black text color */
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.wedding-details p, .rsvp p {
-    font-size: 1.2rem;
-    color: #000000; /* Black text color */
-}
-
-.rsvp a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #006400;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-}
-
-.rsvp a:hover {
-    background-color: #006400;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.gallery img {
-    width: 200px;
-    height: auto;
+    background-color: var(--accent-color);
     border-radius: 10px;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #ffebcd;
+    background-color: var(--primary-color);
 }
 
+/* Links in Footer */
 footer a {
-    color: #000000; /* Black text color */
+    color: #fff;
     text-decoration: none;
 }
 
