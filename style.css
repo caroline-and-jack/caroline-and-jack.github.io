@@ -24,7 +24,6 @@ header {
 
 header img {
     width: 100%;
-    
 }
 
 nav ul {
@@ -42,10 +41,13 @@ nav ul li a {
     color: #fff;
     font-weight: bold;
     font-size: 1.2rem;
+    padding: 10px 20px; /* Adds space around the text */
+    border-radius: 5px;  /* Optional: Rounds the corners for a softer look */
 }
 
 nav ul li a:hover {
     color: var(--secondary-color);
+    background-color: var(--highlight-color); /* Optional: Adds a background color on hover */
 }
 
 /* Sections */
@@ -72,7 +74,6 @@ footer a {
 
 footer img {
     width: 100%;
-    
 }
 
 footer a:hover {
