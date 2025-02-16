@@ -68,7 +68,6 @@
             height: auto;
         }
     </style>
-    
 
     <section class="rsvp">
         <h2>RSVP</h2>
@@ -116,6 +115,38 @@
         const images = document.querySelectorAll('.carousel img');
         const totalImages = images.length;
         let currentIndex = 0;
+
+        // Find the largest image by width and height
+        function findLargestImage() {
+            let maxWidth = 0;
+            let maxHeight = 0;
+            images.forEach(img => {
+                const imgWidth = img.naturalWidth;
+                const imgHeight = img.naturalHeight;
+                maxWidth = Math.max(maxWidth, imgWidth);
+                maxHeight = Math.max(maxHeight, imgHeight);
+            });
+            return { width: maxWidth, height: maxHeight };
+        }
+
+        function adjustImagesSize() {
+            const { width, height } = findLargestImage();
+            images.forEach(img => {
+                const imgWidth = img.naturalWidth;
+                const imgHeight = img.naturalHeight;
+
+                // Calculate padding to make every image the same size
+                const paddingX = (width - imgWidth) / 2; // Horizontal padding
+                const paddingY = (height - imgHeight) / 2; // Vertical padding
+
+                img.style.padding = `${paddingY}px ${paddingX}px`;
+                img.style.width = `${width}px`;
+                img.style.height = `${height}px`;
+            });
+        }
+
+        // Adjust the images when the page loads
+        window.onload = adjustImagesSize;
 
         function showImage(index) {
             const offset = -index * 100; // Shift to show the right image
