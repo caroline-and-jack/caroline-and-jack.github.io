@@ -12,7 +12,7 @@
             width: 100%;
             max-width: 600px;
             margin: auto;
-            overflow: hidden;
+            overflow: hidden; /* Hide images that are not in view */
         }
 
         .carousel-images {
@@ -22,7 +22,7 @@
 
         .carousel img {
             width: 100%;
-            height: 200px; /* Set a fixed height of 200px for all images */
+            height: 500px; /* Set the height of each image to 500px */
             object-fit: cover; /* Ensure images cover the area without distorting */
         }
 
@@ -124,8 +124,8 @@
             showImage(currentIndex);
         }
 
-        // Set interval to change image every 1.5 seconds
-        setInterval(nextImage, 1500);
+        // Set interval to change image every 2 seconds
+        setInterval(nextImage, 2000);
 
         // Navigation buttons for manual control
         document.querySelector('.carousel-next').addEventListener('click', nextImage);
