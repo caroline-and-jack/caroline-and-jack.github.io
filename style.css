@@ -1,17 +1,22 @@
 /* style.css */
 body {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Garamond', serif;
     margin: 0;
     padding: 0;
     background-color: #f6f2f0;
     color: #000000; /* Black text color */
 }
 
+/* Cursive font for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Brush Script MT', cursive;
+}
+
 /* Color palette */
 :root {
     --primary-color: #5d707e;  /* Navy */
     --secondary-color: #d4a696;  /* Rose */
-    --accent-color: #86ab8a;   /* Moss */
+    --accent-color: #B4D2B1;   /* Moss */
     --highlight-color: #c17661; /* Terracotta */
 }
 
