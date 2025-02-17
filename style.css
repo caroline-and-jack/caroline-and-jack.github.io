@@ -80,3 +80,24 @@ footer img {
 footer a:hover {
     text-decoration: underline;
 }
+
+a {
+    color: #c17661; /* Terracotta color for normal links */
+    text-decoration: none; /* Optional: Removes underline */
+}
+
+/* Hover state (when user hovers over the link) */
+a:hover {
+    color: #c17661; /* Orange color when hovering */
+    text-decoration: underline; /* Optional: Adds underline on hover */
+}
+
+/* Visited links (links the user has already clicked) */
+a:visited {
+    color: #c17661; /* Purple color for visited links */
+}
+
+/* Active state (when the user is clicking the link) */
+a:active {
+    color: #c17661; /* Red color when the link is active (being clicked) */
+}
