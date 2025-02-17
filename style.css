@@ -5,11 +5,7 @@ body {
     padding: 0;
     background-color: #f6f2f0;
     color: #000000; /* Black text color */
-}
-
-/* Cursive font for headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Brush Script MT', cursive;
+    font-size: 1.5rem; /* Increased font size by 1.5 */
 }
 
 /* Color palette */
@@ -46,22 +42,19 @@ nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    font-size: 1.2rem;
-    padding: 20pt 20px; /* Set both top and bottom padding to 20pt */
+    font-size: 1.8rem; /* 1.5 times 1.2rem = 1.8rem */
+    padding: 30pt 30px; /* Increased padding as well */
     border-radius: 5px;
 }
 
-
-
 nav ul li a:hover {
     color: var(--secondary-color);
-
 }
 
 /* Sections */
 section {
-    padding: 20px;
-    margin: 20px auto;
+    padding: 30px; /* Increased padding */
+    margin: 30px auto; /* Increased margin */
     max-width: 900px;
     background-color: var(--accent-color);
     border-radius: 10px;
